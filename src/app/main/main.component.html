@@ -3,14 +3,23 @@
 
   <span>Inicio</span>
 
-  <button mat-icon-button>
+  <button mat-icon-button [mat-menu-trigger-for]="menu">
     <mat-icon>more_vert</mat-icon>
   </button>
 </mat-toolbar>
+<mat-menu x-position="before" #menu="matMenu" [overlapTrigger]="false">
+  <button mat-menu-item>Cerrar Sesión</button>
+</mat-menu>
 
 <div class="main-content">
-  <button mat-raised-button color="primary" class="main-btn">Compañero</button>
-  <button mat-raised-button color="primary" class="main-btn">Agenda</button>
+  <button mat-raised-button color="primary" class="main-btn">
+    <mat-icon>group</mat-icon>
+    <span>Compañero</span>
+  </button>
+  <button mat-raised-button color="primary" class="main-btn">
+    <mat-icon>date_range</mat-icon>
+    Agenda
+  </button>
 
   <div class="card-list">
     <app-match-card *ngFor="let match of matches" [match]="match"></app-match-card>
