@@ -12,4 +12,9 @@
 
 mat-card-title {
     color: #360045;
+    font-weight: bold;
+}
+
+mat-card-subtitle {
+    font-size: 11px;
 }

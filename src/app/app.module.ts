@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app-routing.module';
 import { MainService } from './main.service';
 import { MatchDetailComponent } from './main/match-detail/match-detail.component';
 import { MatchCardComponent } from './main/match-card/match-card.component';
@@ -10,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
+import { Error404Component } from './error-404/error-404.component';
 
 
 @NgModule({
@@ -19,12 +21,14 @@ import { HttpClientModule } from "@angular/common/http";
     MainComponent,
     MatchCardComponent,
     MatchDetailComponent,
+    Error404Component,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialBundleModule
+    MaterialBundleModule,
+    AppRoutingModule
   ],
   providers: [MainService],
   bootstrap: [AppComponent]
