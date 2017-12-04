@@ -1,0 +1,14 @@
+.match-card {
+    /* max-width: 500px; */
+}
+
+.avatar-icon {
+    background-image: url('http://voice4thought.org/wp-content/uploads/2016/08/default1.jpg');
+    background-size: cover;
+    height: 60px;
+    width: 60px;
+}
+
+mat-card-title {
+    color: #360045;
+}

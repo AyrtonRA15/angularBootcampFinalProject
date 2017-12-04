@@ -1,0 +1,27 @@
+mat-toolbar {
+    background-color: #360045;
+    color: white;
+}
+
+mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-toolbar {
+  justify-content: space-between;
+}
+
+.main-btn {
+    width: 100%;
+    margin: 8px 0px;
+}
+
+.main-content {
+    margin: 8px;
+}
+
+.card-list {
+    
+}

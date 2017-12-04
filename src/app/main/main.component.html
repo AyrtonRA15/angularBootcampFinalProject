@@ -1,0 +1,18 @@
+<mat-toolbar>
+  <mat-icon>mood</mat-icon>
+
+  <span>Inicio</span>
+
+  <button mat-icon-button>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="main-content">
+  <button mat-raised-button color="primary" class="main-btn">Compañero</button>
+  <button mat-raised-button color="primary" class="main-btn">Agenda</button>
+
+  <div class="card-list">
+    <app-match-card *ngFor="let match of matches" [match]="match"></app-match-card>
+  </div>
+</div>
