@@ -1,5 +1,6 @@
+import { IEmployee } from './../../employee.interface';
+import { UserService } from './../../user.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from "@angular/router";
 
 @Component({
   selector: 'app-match-detail',
@@ -8,14 +9,18 @@ import { ActivatedRoute, ParamMap } from "@angular/router";
 })
 export class MatchDetailComponent implements OnInit {
 
-  constructor(
-    private route: ActivatedRoute
-  ) { }
+  match: IEmployee;
+  detail: string;
+  hobbies: string[];
 
-  ngOnInit() {
-    // this.route.paramMap.subscribe((params: ParamMap) => {
-    //   params.get('id');
-    // });
+  constructor(
+    private userService: UserService
+  ) {
+    this.detail = userService.detail;
+    this.hobbies = userService.hobbies;
+    this.match = userService.matchSelected;
   }
+
+  ngOnInit() { }
 
 }

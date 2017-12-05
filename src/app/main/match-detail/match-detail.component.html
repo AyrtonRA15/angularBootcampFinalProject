@@ -1,11 +1,19 @@
 <mat-card class="match-card-detail">
-  <!-- <mat-card-header>
-    <div mat-card-avatar class="avatar-icon"></div>
-    <mat-card-title>{{ match.firstName }} {{ match.lastName }}</mat-card-title>
-    <mat-card-subtitle>{{ detail }}</mat-card-subtitle>
-  </mat-card-header> -->
   <mat-card-content>
-    <!-- <span>{{ match.firstName }} {{ match.lastName }}</span>
-    <span>{{ position }}</span> -->
+    <div class="avatar-icon-detail"></div>
+    <div class="detail-title">
+      <div class="name">{{ match.firstName }} {{ match.lastName }}</div>
+      <div class="position">Position</div>
+    </div>
+    <div class="rating">
+      <br>
+    </div>
+    <div class="hobbies">
+      <div class="hobbies-title">Intereses</div>
+      <span class="hobbie" *ngFor="let hobbie of hobbies">{{ hobbie }}</span>
+    </div>
+    <div class="match-detail">
+      {{ detail }}
+    </div>
   </mat-card-content>
 </mat-card>

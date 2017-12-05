@@ -1,5 +1,5 @@
 <mat-toolbar>
-    <img class="logo" src="./assets/yuxi-logo-white.png" [routerLink]="[ '/main']">
+    <img class="logo" src="./assets/yuxi-logo-white.png" [routerLink]="[ '/main' ]">
 
     <span>Inicio</span>
 
@@ -8,6 +8,6 @@
     </button>
 </mat-toolbar>
 <mat-menu x-position="before" #menu="matMenu" [overlapTrigger]="false">
-    <button mat-menu-item [routerLink]="[ '/login']">Cerrar Sesión</button>
+    <button mat-menu-item [routerLink]="[ '/login' ]">Cerrar Sesión</button>
 </mat-menu>
 <router-outlet></router-outlet>

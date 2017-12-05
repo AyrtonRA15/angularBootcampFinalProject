@@ -1,3 +1,46 @@
 .match-card-detail {
     margin: 5px;
+    height: 82vh;
+}
+
+mat-card-content {
+    padding-top: 30px;
+}
+
+.avatar-icon-detail {
+    background-image: url('http://voice4thought.org/wp-content/uploads/2016/08/default1.jpg');
+    background-size: cover;
+    height: 120px;
+    width: 120px;
+    border: 3px solid #3500458f;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin: auto;
+}
+
+.detail-title, .hobbies, .match-detail {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.match-detail {
+    font-weight: normal;
+    padding: 16px;
+    color: rgba(0,0,0,.54);
+}
+
+.detail-title, .hobbies-title {
+    font-size: 18px;
+    color: #360045;
+    font-weight: bold;
+    padding-bottom: 8px;
+}
+
+.detail-title .position {
+    font-size: 14px;
+}
+
+.hobbie {
+    padding: 5px 12px;
+    color: rgba(0,0,0,.54);
 }

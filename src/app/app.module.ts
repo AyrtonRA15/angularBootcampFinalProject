@@ -1,5 +1,5 @@
+import { UserService } from './user.service';
 import { AppRoutingModule } from './app-routing.module';
-import { MainService } from './main.service';
 import { MatchDetailComponent } from './main/match-detail/match-detail.component';
 import { MatchCardComponent } from './main/match-card/match-card.component';
 import { MainComponent } from './main/main.component';
@@ -30,7 +30,7 @@ import { Error404Component } from './error-404/error-404.component';
     MaterialBundleModule,
     AppRoutingModule
   ],
-  providers: [MainService],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

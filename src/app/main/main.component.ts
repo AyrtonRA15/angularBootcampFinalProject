@@ -1,6 +1,7 @@
+import { IEmployee } from './../employee.interface';
+import { UserService } from './../user.service';
+import { IUserLogged } from './../user-logged.interface';
 import { Observable } from 'rxjs/Observable';
-import { MainService } from './../main.service';
-import { IUser } from './../user.interface';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -11,45 +12,37 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MainComponent implements OnInit {
 
   // @Input() user: IUser;
-  private _user: IUser;
-  private _userLogged: {};
-  private _currentMatch: IUser;
-  private _matches: IUser[];
+  private _userLogged: IUserLogged;
 
   constructor(
-    private mainService: MainService
+    private userService: UserService
   ) {
-    this._user = {
-      active: false,
-      currentMatch: '',
-      email: '',
-      firstName: '',
-      lastName: '',
-      location: -1,
-      matchConfirmed: false,
-      matches: {}
-    };
-    this._matches = [];
+    this._userLogged = {
+      currentMatch: {
+        active: false,
+        currentMatch: '',
+        email: '',
+        firstName: '',
+        lastName: '',
+        location: -1,
+        matchConfirmed: false,
+        matches: {}
+      },
+      matches: []
+    }
   }
 
   ngOnInit() {
-    this.mainService.getUserInfo('-KgOv-CH56cFUVSH2TrK').subscribe(userLogged => {
+    this.userService.getUserInfo('-KgOv-CH56cFUVSH2TrK').subscribe(userLogged => {
       this._userLogged = userLogged;
-      this._matches = userLogged.matches;
     });
   }
 
-  getCurrentMatch
-
-  get user(): IUser {
-    return this._user;
+  selectMatch(match: IEmployee): void {
+    this.userService.matchSelected = match;
   }
 
-  get currentMatch(): IUser {
-    return this._currentMatch;
-  }
-
-  get matches(): IUser[] {
-    return this._matches;
+  get userLogged(): IUserLogged {
+    return this._userLogged;
   }
 }

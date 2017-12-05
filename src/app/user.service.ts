@@ -1,4 +1,5 @@
-import { IUser } from './user.interface';
+import { IEmployee } from './employee.interface';
+import { IUserLogged } from './user-logged.interface';
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs/Observable';
@@ -7,16 +8,21 @@ import 'rxjs/add/operator/concatMapTo';
 import 'rxjs/add/operator/withLatestFrom';
 
 @Injectable()
-export class MainService {
+export class UserService {
 
   url = 'https://shared-lunch.firebaseio.com/users.json';
-  private _userLogged: IUser;
+  // Fake Info
+  private _detail: string;
+  private _hobbies: string[];
+  private _matchselected: IEmployee;
 
   constructor(
     private http: HttpClient
   ) {
-    this._userLogged = {
-      active: true,
+    this._detail = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet odio tincidunt, dignissim felis vel, accumsan risus.';
+    this._hobbies = ['Comics', 'Series', 'Futbol', 'Novelas'];
+    this._matchselected = {
+      active: false,
       currentMatch: '',
       email: '',
       firstName: '',
@@ -27,27 +33,35 @@ export class MainService {
     }
   }
 
-  getUserInfo(id: string): Observable<any> {
+  getUserInfo(id: string): Observable<IUserLogged> {
     return this.http.get(this.url)
       .map(employees => {
-        let user = employees[id];
+        let user: IEmployee = employees[id];
         let resultMatches = [];
         for (const matchId in user.matches) {
           resultMatches.push(employees[matchId]);
         }
         return {
-          user: user,
           currentMatch: employees[user.currentMatch],
           matches: resultMatches
         }
       });
   }
 
-  get userLogged(): IUser {
-    return this._userLogged;
+  get detail(): string {
+    return this._detail;
   }
 
-  set userLogged(user: IUser) {
-    this._userLogged = user;
+  get hobbies(): string[] {
+    return this._hobbies;
   }
+
+  get matchSelected(): IEmployee {
+    return this._matchselected;
+  }
+
+  set matchSelected(match: IEmployee) {
+    this._matchselected = match;
+  }
+
 }

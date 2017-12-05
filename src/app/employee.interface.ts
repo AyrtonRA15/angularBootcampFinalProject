@@ -1,4 +1,4 @@
-export interface IUser {
+export interface IEmployee {
     active: boolean;
     currentMatch: string;
     email: string;
@@ -6,5 +6,5 @@ export interface IUser {
     lastName: string;
     location: number;
     matchConfirmed: boolean;
-    matches: {}
+    matches: {};
 }

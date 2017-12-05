@@ -1,4 +1,5 @@
-import { IUser } from './../../user.interface';
+import { UserService } from './../../user.service';
+import { IEmployee } from './../../employee.interface';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,18 +9,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MatchCardComponent implements OnInit {
 
-  @Input() match: IUser;
-  private _detail: string;
+  @Input() match: IEmployee;
+  detail: string;
 
-  constructor() {
-    this._detail = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet odio tincidunt, dignissim felis vel, accumsan risus.';
+  constructor(
+    private userService: UserService
+  ) {
+    this.detail = userService.detail;
   }
 
   ngOnInit() {
-  }
-
-  get detail(): string {
-    return this._detail;
   }
 
 }
