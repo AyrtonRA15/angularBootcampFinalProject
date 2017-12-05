@@ -3,3 +3,12 @@ mat-toolbar {
     color: white;
     justify-content: space-between;
 }
+
+img.logo {
+    width: 26px;
+    height: 26px;
+}
+
+img:focus {
+    outline: none;
+}

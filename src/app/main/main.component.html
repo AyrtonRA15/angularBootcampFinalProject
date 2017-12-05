@@ -9,6 +9,6 @@
   </button>
 
   <div class="card-list">
-    <app-match-card *ngFor="let match of matches" [match]="match"></app-match-card>
+    <app-match-card *ngFor="let match of matches" [match]="match" [routerLink]="[ '/match']"></app-match-card>
   </div>
 </div>
