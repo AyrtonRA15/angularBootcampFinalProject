@@ -3,11 +3,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/concatMapTo';
+import 'rxjs/add/operator/withLatestFrom';
 
 @Injectable()
 export class MainService {
 
-  url = 'https://shared-lunch.firebaseio.com/users/';
+  url = 'https://shared-lunch.firebaseio.com/users.json';
   private _userLogged: IUser;
 
   constructor(
@@ -26,7 +28,19 @@ export class MainService {
   }
 
   getUserInfo(id: string): Observable<any> {
-    return this.http.get(this.url + id + '.json');
+    return this.http.get(this.url)
+      .map(employees => {
+        let user = employees[id];
+        let resultMatches = [];
+        for (const matchId in user.matches) {
+          resultMatches.push(employees[matchId]);
+        }
+        return {
+          user: user,
+          currentMatch: employees[user.currentMatch],
+          matches: resultMatches
+        }
+      });
   }
 
   get userLogged(): IUser {

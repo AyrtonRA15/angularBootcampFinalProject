@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from "@angular/router";
 
 @Component({
   selector: 'app-match-detail',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    // this.route.paramMap.subscribe((params: ParamMap) => {
+    //   params.get('id');
+    // });
   }
 
 }

@@ -12,6 +12,7 @@ export class MainComponent implements OnInit {
 
   // @Input() user: IUser;
   private _user: IUser;
+  private _userLogged: {};
   private _currentMatch: IUser;
   private _matches: IUser[];
 
@@ -19,7 +20,7 @@ export class MainComponent implements OnInit {
     private mainService: MainService
   ) {
     this._user = {
-      active: true,
+      active: false,
       currentMatch: '',
       email: '',
       firstName: '',
@@ -32,15 +33,9 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mainService.getUserInfo('-KgOv-CH56cFUVSH2TrK').subscribe(user => {
-      this._user = user;
-
-      this.mainService.getUserInfo(user.currentMatch).subscribe(cMatch => this._currentMatch = cMatch);
-
-      for (const userId in user.matches) {
-        this.mainService.getUserInfo(userId).subscribe(match => this._matches.push(match));
-      }
-
+    this.mainService.getUserInfo('-KgOv-CH56cFUVSH2TrK').subscribe(userLogged => {
+      this._userLogged = userLogged;
+      this._matches = userLogged.matches;
     });
   }
 
