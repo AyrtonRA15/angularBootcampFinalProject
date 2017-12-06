@@ -7,7 +7,9 @@ import { LoginComponent } from './login/login.component';
 import { MaterialBundleModule } from './material-bundle/material-bundle.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RatingModule } from "ngx-rating";
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
@@ -28,7 +30,9 @@ import { Error404Component } from './error-404/error-404.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialBundleModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RatingModule,
+    FormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

@@ -5,8 +5,9 @@
       <div class="name">{{ match.firstName }} {{ match.lastName }}</div>
       <div class="position">Position</div>
     </div>
-    <div class="rating">
-      <br>
+    <div class="rating-container">
+      <rating [(ngModel)]="rating" [readonly]="ratingReadOnly">
+      </rating>
     </div>
     <div class="hobbies">
       <div class="hobbies-title">Intereses</div>

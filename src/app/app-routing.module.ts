@@ -10,7 +10,7 @@ const routes: Routes = [{
 }, {
     path: 'main', component: MainComponent
 }, {
-    path: 'match', component: MatchDetailComponent
+    path: 'match/:rateMode', component: MatchDetailComponent
 }, {
     path: 'login', component: LoginComponent
 }, {

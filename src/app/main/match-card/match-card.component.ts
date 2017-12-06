@@ -10,15 +10,19 @@ import { Component, OnInit, Input } from '@angular/core';
 export class MatchCardComponent implements OnInit {
 
   @Input() match: IEmployee;
-  detail: string;
+  private _detail: string;
 
   constructor(
     private userService: UserService
   ) {
-    this.detail = userService.detail;
+    this._detail = userService.detail;
   }
 
   ngOnInit() {
+  }
+
+  get detail(): string {
+    return this._detail;
   }
 
 }

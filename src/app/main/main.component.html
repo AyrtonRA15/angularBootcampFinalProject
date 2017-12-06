@@ -1,5 +1,5 @@
 <div class="main-content">
-  <button mat-raised-button color="primary" class="main-btn" [routerLink]="[ '/match' ]" (click)="selectMatch(userLogged.currentMatch)">
+  <button mat-raised-button color="primary" class="main-btn" [routerLink]="[ '/match', 'rate' ]" (click)="selectMatch(userLogged.currentMatch)">
     <mat-icon>group</mat-icon>
     <span>Compañero</span>
   </button>
@@ -9,6 +9,6 @@
   </button>
 
   <div class="card-list">
-    <app-match-card *ngFor="let match of userLogged.matches" [match]="match" [routerLink]="[ '/match' ]" (click)="selectMatch(match)"></app-match-card>
+    <app-match-card *ngFor="let match of userLogged.matches" [match]="match" [routerLink]="[ '/match', 'read' ]" (click)="selectMatch(match)"></app-match-card>
   </div>
 </div>

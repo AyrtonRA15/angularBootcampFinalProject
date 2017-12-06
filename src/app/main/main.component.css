@@ -22,3 +22,7 @@
 .card-list {
     margin-top: 8px;
 }
+
+app-match-card {
+    cursor: pointer;
+}

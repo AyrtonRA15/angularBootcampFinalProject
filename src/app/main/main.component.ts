@@ -18,16 +18,7 @@ export class MainComponent implements OnInit {
     private userService: UserService
   ) {
     this._userLogged = {
-      currentMatch: {
-        active: false,
-        currentMatch: '',
-        email: '',
-        firstName: '',
-        lastName: '',
-        location: -1,
-        matchConfirmed: false,
-        matches: {}
-      },
+      currentMatch: this.userService.emptyEmployee,
       matches: []
     }
   }

@@ -10,31 +10,23 @@ import 'rxjs/add/operator/withLatestFrom';
 @Injectable()
 export class UserService {
 
-  url = 'https://shared-lunch.firebaseio.com/users.json';
+  private _url = 'https://shared-lunch.firebaseio.com/users.json';
+  private _matchselected: IEmployee;
   // Fake Info
   private _detail: string;
   private _hobbies: string[];
-  private _matchselected: IEmployee;
+  private _ratingSelected: number;
 
   constructor(
     private http: HttpClient
   ) {
     this._detail = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet odio tincidunt, dignissim felis vel, accumsan risus.';
     this._hobbies = ['Comics', 'Series', 'Futbol', 'Novelas'];
-    this._matchselected = {
-      active: false,
-      currentMatch: '',
-      email: '',
-      firstName: '',
-      lastName: '',
-      location: -1,
-      matchConfirmed: false,
-      matches: {}
-    }
+    this._matchselected = this.emptyEmployee;
   }
 
   getUserInfo(id: string): Observable<IUserLogged> {
-    return this.http.get(this.url)
+    return this.http.get(this._url)
       .map(employees => {
         let user: IEmployee = employees[id];
         let resultMatches = [];
@@ -48,6 +40,28 @@ export class UserService {
       });
   }
 
+  get matchSelected(): IEmployee {
+    return this._matchselected;
+  }
+
+  set matchSelected(match: IEmployee) {
+    this._matchselected = match;
+  }
+
+  get emptyEmployee(): IEmployee {
+    return {
+      active: false,
+      currentMatch: '',
+      email: '',
+      firstName: '',
+      lastName: '',
+      location: null,
+      matchConfirmed: false,
+      matches: {},
+    }
+  }
+
+  // Fake Info
   get detail(): string {
     return this._detail;
   }
@@ -56,12 +70,16 @@ export class UserService {
     return this._hobbies;
   }
 
-  get matchSelected(): IEmployee {
-    return this._matchselected;
+  get ratingSelected(): number {
+    return this._ratingSelected;
   }
 
-  set matchSelected(match: IEmployee) {
-    this._matchselected = match;
+  set ratingSelected(rating: number) {
+    this._ratingSelected = rating;
+  }
+
+  get randomRating(): number {
+    return Math.floor((Math.random() * 5) + 1);
   }
 
 }
