@@ -12,6 +12,7 @@ export class UserService {
 
   private _url = 'https://shared-lunch.firebaseio.com/users.json';
   private _matchselected: IEmployee;
+  private _userLoggedId: string;
   // Fake Info
   private _detail: string;
   private _hobbies: string[];
@@ -40,14 +41,6 @@ export class UserService {
       });
   }
 
-  get matchSelected(): IEmployee {
-    return this._matchselected;
-  }
-
-  set matchSelected(match: IEmployee) {
-    this._matchselected = match;
-  }
-
   get emptyEmployee(): IEmployee {
     return {
       active: false,
@@ -59,6 +52,22 @@ export class UserService {
       matchConfirmed: false,
       matches: {},
     }
+  }
+
+  get matchSelected(): IEmployee {
+    return this._matchselected;
+  }
+
+  set matchSelected(match: IEmployee) {
+    this._matchselected = match;
+  }
+
+  get userLoggedId(): string {
+    return this._userLoggedId;
+  }
+
+  set userLoggedId(id: string) {
+    this._userLoggedId = id;
   }
 
   // Fake Info

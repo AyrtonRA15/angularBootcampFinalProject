@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { IEmployee } from './../employee.interface';
 import { UserService } from './../user.service';
 import { IUserLogged } from './../user-logged.interface';
@@ -15,7 +16,8 @@ export class MainComponent implements OnInit {
   private _userLogged: IUserLogged;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {
     this._userLogged = {
       currentMatch: this.userService.emptyEmployee,
@@ -24,9 +26,13 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUserInfo('-KgOv-CH56cFUVSH2TrK').subscribe(userLogged => {
-      this._userLogged = userLogged;
-    });
+    if (this.userService.userLoggedId) {
+      this.userService.getUserInfo(this.userService.userLoggedId).subscribe(userLogged => {
+        this._userLogged = userLogged;
+      });
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
 
   selectMatch(match: IEmployee): void {

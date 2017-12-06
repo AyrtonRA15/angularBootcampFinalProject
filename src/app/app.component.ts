@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { UserService } from './user.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,7 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor(
-    public route: ActivatedRoute
+    private userService: UserService
   ) { }
 
+  logout(): void {
+    this.userService.userLoggedId = null;
+  }
+
+  get isLogged(): boolean {
+    return !this.userService.userLoggedId;
+  }
 }
