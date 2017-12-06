@@ -58,8 +58,3 @@ mat-card-content {
     user-select: none; /* Standard syntax */
     -webkit-tap-highlight-color: transparent;
 }
-
-.rating .ng-star-inserted .star-icon {
-    /* color: linear-gradient(to right, rgba(124, 0, 226, 0.541), rgba(255, 255, 0, 0.541)); */
-    color: purple;
-}

@@ -9,3 +9,11 @@ body {
 .mat-card-header-text {
     margin: 0 8px 0 16px !important;
 }
+
+.rating .ng-star-inserted .star-icon:before {
+    color: #360045;
+}
+
+.rating .ng-star-inserted .star-icon {
+    color: rgba(255, 211, 89, 0.747);
+}
