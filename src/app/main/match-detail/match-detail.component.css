@@ -1,6 +1,11 @@
-.match-card-detail {
+.match-card-container {
     margin: 5px;
-    height: 82vh;
+}
+
+.match-card-detail {
+    margin: auto;
+    max-width: 800px;
+    height: 81vh;
 }
 
 mat-card-content {
@@ -8,7 +13,7 @@ mat-card-content {
 }
 
 .avatar-icon-detail {
-    background-image: url('http://voice4thought.org/wp-content/uploads/2016/08/default1.jpg');
+    background-image: url('../../../assets/avatar-icon.jpg');
     background-size: cover;
     height: 120px;
     width: 120px;

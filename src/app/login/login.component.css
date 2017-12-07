@@ -2,18 +2,17 @@
     font-family: 'Quicksand', sans-serif;
     height: 100vh;
     background: rgba(30,29,31,1);
-    background: -moz-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgba(223,64,90,1) 100%);
-    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(30,29,31,1)), color-stop(100%, rgba(223,64,90,1)));
-    background: -webkit-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgba(223,64,90,1) 100%);
-    background: -o-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgba(223,64,90,1) 100%);
-    background: -ms-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgba(223,64,90,1) 100%);
-    background: linear-gradient(135deg, rgba(30,29,31,1) 0%, rgba(223,64,90,1) 100%);
+    background: -moz-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgb(160, 13, 160) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgb(160, 13, 160) 100%);
+    background: -o-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgb(160, 13, 160) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(30,29,31,1) 0%, rgb(160, 13, 160) 100%);
+    background: linear-gradient(135deg, rgba(30,29,31,1) 0%, rgb(160, 13, 160) 100%);
 }
 
 .login-box {
     width: 340px;
     margin: auto;
-    padding-top: 15vh;
+    padding-top: 16vh;
 }
 
 .login-tab {
@@ -82,8 +81,7 @@ h2 {
 
 .login-form .field {
     width: 295px;
-    display: inline-table;
-    padding: 5px 20px;
+    padding: 5px 22px;
     margin-bottom: 2px;
 }
 
@@ -99,16 +97,14 @@ label {
 }
 
 input {
-    width: -webkit-fill-available;
+    width: 274px;
     height: 32px;
     padding: 0px 10px;
     background-color: rgba(0,0,0,0.03);
     border: none;
-    display: inline;
     color: #303030;
     font-size: 16px;
     font-weight: 400;
-    float: left;
     -webkit-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
     -moz-box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
     box-shadow: inset 1px 1px 0px rgba(0,0,0,0.05), 1px 1px 0px rgba(255,255,255,1);
@@ -117,8 +113,7 @@ input {
 input[type=submit] {
     width: 274px;
     height: 48px;
-    margin-top: 13px;
-    margin-left: 33px;
+    margin-top: 28px;
     padding: 0px 20px;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
@@ -126,16 +121,16 @@ input[type=submit] {
     color: #fff;
     line-height: 40px;
     text-align: center;
-    background-color: #87314e;
+    background-color: #360045;
     border-radius: 6px;
-    border: 1px #87314e solid;
+    border: 1px #360045 solid;
     opacity: 1;
     cursor: pointer;
 }
 
 input[type=submit]:hover {
-    background-color: #df405a;
-    border: 1px #df405a solid;
+    background-color: #87314e;
+    border: 1px #87314e solid;
 }
 
 img {

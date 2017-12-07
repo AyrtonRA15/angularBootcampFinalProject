@@ -1,13 +1,18 @@
 .match-card {
-    /* max-width: 500px; */
+    max-width: 750px;
+    margin: auto;
 }
 
 .avatar-icon {
-    background-image: url('http://voice4thought.org/wp-content/uploads/2016/08/default1.jpg');
+    background-image: url('../../../assets/avatar-icon.jpg');
     background-size: cover;
     height: 55px;
     width: 55px;
     border: 3px solid #3500458f;
+}
+
+mat-card-header {
+    text-align: left;
 }
 
 mat-card-title {

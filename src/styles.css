@@ -12,9 +12,9 @@ body {
 }
 
 .rating .ng-star-inserted .star-icon:before {
-    color: #360045;
+    color: #87314e;
 }
 
 .rating .ng-star-inserted .star-icon {
-    color: rgba(255, 211, 89, 0.747);
+    color: #c0364f93;
 }

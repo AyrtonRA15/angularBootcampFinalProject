@@ -1,20 +1,22 @@
-<mat-card class="match-card-detail">
-  <mat-card-content>
-    <div class="avatar-icon-detail"></div>
-    <div class="detail-title">
-      <div class="name">{{ match.firstName }} {{ match.lastName }}</div>
-      <div class="position">Position</div>
-    </div>
-    <div class="rating-container">
-      <rating [(ngModel)]="rating" [readonly]="ratingReadOnly">
-      </rating>
-    </div>
-    <div class="hobbies">
-      <div class="hobbies-title">Intereses</div>
-      <span class="hobbie" *ngFor="let hobbie of hobbies">{{ hobbie }}</span>
-    </div>
-    <div class="match-detail">
-      {{ detail }}
-    </div>
-  </mat-card-content>
-</mat-card>
+<div class="match-card-container">
+  <mat-card class="match-card-detail">
+    <mat-card-content>
+      <div class="avatar-icon-detail"></div>
+      <div class="detail-title">
+        <div class="name">{{ match.firstName }} {{ match.lastName }}</div>
+        <div class="position">Position</div>
+      </div>
+      <div class="rating-container">
+        <rating [(ngModel)]="rating" [readonly]="ratingReadOnly">
+        </rating>
+      </div>
+      <div class="hobbies">
+        <div class="hobbies-title">Intereses</div>
+        <span class="hobbie" *ngFor="let hobbie of hobbies">{{ hobbie }}</span>
+      </div>
+      <div class="match-detail">
+        {{ detail }}
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
