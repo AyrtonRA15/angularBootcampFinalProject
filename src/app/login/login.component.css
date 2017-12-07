@@ -12,7 +12,9 @@
 .login-box {
     width: 340px;
     margin: auto;
-    padding-top: 16vh;
+    position: relative;
+    top: 50%;
+    transform: translateY(-54%);
 }
 
 .login-tab {

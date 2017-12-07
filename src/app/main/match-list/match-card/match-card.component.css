@@ -4,7 +4,7 @@
 }
 
 .avatar-icon {
-    background-image: url('../../../assets/avatar-icon.jpg');
+    background-image: url('../../../../assets/avatar-icon.jpg');
     background-size: cover;
     height: 55px;
     width: 55px;

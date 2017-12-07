@@ -1,13 +1,1 @@
-<mat-toolbar *ngIf="!isLogged">
-    <img class="logo" src="./assets/yuxi-logo-white.png" [routerLink]="[ '/main' ]">
-
-    <span>Inicio</span>
-
-    <button mat-icon-button [mat-menu-trigger-for]="menu">
-        <mat-icon>more_vert</mat-icon>
-    </button>
-</mat-toolbar>
-<mat-menu x-position="before" #menu="matMenu" [overlapTrigger]="false">
-    <button mat-menu-item [routerLink]="[ '/login' ]" (click)="logout()">Cerrar Sesión</button>
-</mat-menu>
 <router-outlet></router-outlet>

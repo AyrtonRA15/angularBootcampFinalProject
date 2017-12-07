@@ -1,5 +1,5 @@
-import { UserService } from './../../user.service';
-import { IEmployee } from './../../employee.interface';
+import { UserService } from '../../../user.service';
+import { IEmployee } from '../../../employee.interface';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
